@@ -1,9 +1,4 @@
 # -*- coding: utf-8 -*-
-"""
-Created on Sun Jan 24 11:02:44 2021
-
-@author: mimar
-"""
 
 class Fecha():
    
