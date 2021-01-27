@@ -1,21 +1,12 @@
 # -*- coding: utf-8 -*-
-"""
-Created on Wed Jan 27 07:51:19 2021
-
-@author: LENOVO
-"""
 import math
 
 class Punto2D():
     """Representacion de punto en 2 dimenciones"""
 
- 
-
     def __init__(self, x, y):
         self.x = x
         self.y = y
-
- 
 
     def get_x(self):
         return self.x
@@ -26,18 +17,14 @@ class Punto2D():
     def radio_polar(self):
        return math.sqrt((self.x*self.x)+(self.y*self.y))
 
- 
-
     def angulo_polar(self):
         return math.atan(self.y/self.x)
-
- 
-
     
     def dist_euclidiana(self, other):
         dx = self.x - other.get_x()
         dy = self.y- other.get_y()
         return math.sqrt((dx*dx)+(dy*dy))
+    
     
 class main():
     punto1 = Punto2D(10,20)
