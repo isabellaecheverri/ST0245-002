@@ -2,7 +2,7 @@
 import math
 
 class Punto2D():
-    """Representacion de punto en 2 dimenciones"""
+    """Representacion de punto en 2 dimensiones"""
 
     def __init__(self, x, y):
         self.x = x
