@@ -1,49 +1,33 @@
 import numpy as np
 
+class GraphAm:
 
-class GraphAM:
     def __init__(self, size):
         self.size = size
-        self.matrix = np.zeros((size,size))
-
-    def addArc(self, source, destination, weight):
-        i = source # O(1)
-        j = destination # O(1)
-        self.matrix[i][j] = weight # O(1)
-        # Total: O(1)
-
-    def getSuccesors(self, vertex):
-        respuesta = []
-        for j in range(self.size):
-            if matrix[vertex][j] is not 0:
-                respuesta.add(j)
-            return respuesta
+        self.matriz = np.zeros((size, size))
+        
+    def __str__(self):
+        return f'{self.matriz}'
 
     def getWeight(self, source, destination):
-        '''for i in range(size):
-            for j in range(size):
-                self.matrix[i][j] ??? '''
-        return matrix[source][destination]
+        return self.matriz[source][destination]
 
-    def getEdges(self):
-        ...
+    def addArc(self, source, destination, weight):
+        self.matriz[source][destination] = weight
 
-    def __str__(self):
-        ...
-    
+    def getSuccessors(self, vertex):
+        succs = []
+        for k, v in enumerate(self.matriz[vertex]):
+            if v != vertex:
+                succs.append(vertex)
+        return succs
 
-    class GraphAL:
-        def __init__(self, size):
-            ...
 
-        def addArc(self, vertex, edge, weight):
-            ...
 
-        def getSuccessors(self, vertice):
-            ...
-
-        def getWeight(self, source, destination):
-            ...
-
-        def __str__(self):
-            ...
+ga = GraphAm(3)
+ga.addArc(0, 1 , 15)
+ga.addArc(0, 2 , 30)
+ga.addArc(1, 1 , 7)
+print(ga)
+print(ga.getSuccessors(0))
+print(ga.getWeight(1, 1))
